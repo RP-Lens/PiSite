@@ -10,6 +10,16 @@ app.use('/', function(req,res){
     //__dirname : It will resolve to your project folder.
   });
 const server = http.createServer(app);
-const port = 3000;
+
+
+//BT-55AFXW (home router) is configured for port 6969
+const AFXW = 6969;
+//Use localhost:3000 for testing
+const local = 3000;
+
+//Comment out relevant section
+//const port = AFXW
+const port = local;
+
 server.listen(port);
 console.debug('Server listening on port ' + port);
