@@ -23,3 +23,11 @@ const port = local;
 
 server.listen(port);
 console.debug('Server listening on port ' + port);
+
+//Socket.io stuff so i can stop shiz
+const io = require('socket.io')(server);
+io.on('connection', (socketServer) => {
+  socketServer.on('npmStop', () => {
+    process.exit(0);
+  });
+});
